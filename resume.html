@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>Camille Mosiara — Resume</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue:   #0487D9;
+      --sky:    #049DD9;
+      --ice:    #C4E9F2;
+      --peach:  #F2A86D;
+      --blush:  #F2D6D0;
+      --dark:   #0A1628;
+      --mid:    #3A5068;
+      --cream:  #FAFCFE;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: #e8edf2;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    /* Top bar */
+    .top-bar {
+      max-width: 900px; margin: 0 auto 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .top-bar a {
+      color: var(--mid); font-size: 0.8rem; text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .top-bar a:hover { color: var(--blue); }
+    .download-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--blue); color: white;
+      border: none; padding: 0.7rem 1.5rem;
+      border-radius: 3rem; font-size: 0.82rem; font-weight: 500;
+      cursor: pointer; font-family: inherit;
+      transition: background 0.2s;
+    }
+    .download-btn:hover { background: var(--dark); }
+
+    /* Resume card */
+    .resume-page {
+      max-width: 900px; margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(4,135,217,0.12);
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      min-height: 1100px;
+    }
+
+    /* LEFT SIDEBAR */
+    .sidebar {
+      background: var(--dark);
+      padding: 3rem 2rem;
+      display: flex; flex-direction: column; gap: 2.5rem;
+    }
+    .sidebar-photo {
+      width: 120px; height: 120px; border-radius: 50%;
+      border: 3px solid var(--sky);
+      object-fit: cover;
+      margin: 0 auto;
+      display: block;
+      background: linear-gradient(135deg, var(--ice), var(--blush));
+    }
+    .sidebar-photo-placeholder {
+      width: 120px; height: 120px; border-radius: 50%;
+      border: 3px solid var(--sky);
+      background: linear-gradient(135deg, var(--ice) 0%, var(--blush) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; color: var(--mid); text-align: center; line-height: 1.4;
+      margin: 0 auto;
+    }
+    .sidebar-name {
+      text-align: center;
+      font-size: 1.4rem; font-weight: 700; color: white; line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+    .sidebar-title {
+      text-align: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--sky); margin-top: 0.4rem;
+    }
+
+    .s-section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--sky); margin-bottom: 1rem;
+    }
+
+    /* Contact */
+    .contact-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 0.7rem;
+    }
+    .contact-icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(4,157,217,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--sky);
+      flex-shrink: 0;
+    }
+    .contact-text { font-size: 0.78rem; color: rgba(196,233,242,0.75); line-height: 1.4; }
+    .contact-text a { color: var(--sky); text-decoration: none; }
+
+    /* Skills */
+    .skill-item { margin-bottom: 0.85rem; }
+    .skill-name-row { display: flex; justify-content: space-between; margin-bottom: 0.3rem; }
+    .skill-name { font-size: 0.78rem; color: rgba(196,233,242,0.8); }
+    .skill-dots { display: flex; gap: 4px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .dot.filled { background: var(--sky); }
+    .dot.empty { background: rgba(4,157,217,0.2); }
+
+    /* Languages */
+    .lang-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.55rem; }
+    .lang-name { font-size: 0.78rem; color: rgba(196,233,242,0.8); }
+    .lang-level { font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--sky); letter-spacing: 0.08em; }
+
+    /* RIGHT MAIN */
+    .main { padding: 3rem 2.5rem; }
+
+    /* Header accent */
+    .main-header {
+      border-left: 4px solid var(--blue);
+      padding-left: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .main-header h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+    .main-header .tagline {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--blue); margin-top: 0.4rem;
+    }
+
+    .m-section { margin-bottom: 2.2rem; }
+    .m-section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .m-section-label::after { content:''; flex: 1; height: 1px; background: var(--ice); }
+
+    /* About */
+    .about-text { font-size: 0.85rem; color: var(--mid); line-height: 1.8; }
+
+    /* Education */
+    .edu-item { margin-bottom: 1.1rem; }
+    .edu-school { font-weight: 700; font-size: 0.88rem; color: var(--dark); }
+    .edu-degree { font-size: 0.8rem; color: var(--mid); margin-top: 0.15rem; }
+    .edu-date { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--blue); margin-top: 0.1rem; }
+
+    /* Extracurricular */
+    .extra-item { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
+    .extra-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--peach); flex-shrink: 0; margin-top: 6px; }
+    .extra-title { font-weight: 500; font-size: 0.85rem; color: var(--dark); }
+    .extra-sub { font-size: 0.75rem; color: var(--mid); margin-top: 0.15rem; }
+
+    /* Skill tags (main) */
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tag {
+      font-size: 0.72rem; letter-spacing: 0.04em;
+      background: var(--ice); color: var(--dark);
+      padding: 0.3rem 0.75rem; border-radius: 2rem; font-weight: 500;
+    }
+
+    /* Print styles */
+    @media print {
+      body { background: white; padding: 0; }
+      .top-bar { display: none; }
+      .resume-page { box-shadow: none; border-radius: 0; max-width: 100%; min-height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="index.html">← Back to portfolio</a>
+  <button class="download-btn" onclick="window.print()">
+    ⬇ Download as PDF
+  </button>
+</div>
+
+<div class="resume-page">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <!-- Photo placeholder — replace with: <img class="sidebar-photo" src="images/picofme.png" alt="Camille"> -->
+    <div>
+      <div class="sidebar-photo-placeholder">📷 your photo</div>
+      <div class="sidebar-name" style="margin-top:1.2rem">Camille<br>Mosiara</div>
+      <div class="sidebar-title">Leader · Team Player · Learner</div>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <div class="s-section-label">// contact</div>
+      <div class="contact-item">
+        <div class="contact-icon">@</div>
+        <div class="contact-text"><a href="mailto:camimarlyn@gmail.com">camimarlyn@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div class="contact-text">+254 (0)71 261 1009</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">in</div>
+        <div class="contact-text"><a href="https://linkedin.com/in/camillemosiara">camillemosiara</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">gh</div>
+        <div class="contact-text"><a href="https://github.com/Fantasma-27">Fantasma-27</a></div>
+      </div>
+    </div>
+
+    <!-- Technical Skills -->
+    <div>
+      <div class="s-section-label">// tech skills</div>
+      <div class="skill-item">
+        <div class="skill-name">HTML / CSS / JS</div>
+        <div class="skill-dots">
+          <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">Java</div>
+        <div class="skill-dots">
+          <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div><div class="dot empty"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">Data Structures &amp; Algorithms</div>
+        <div class="skill-dots">
+          <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div><div class="dot empty"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">Networking / Cabling</div>
+        <div class="skill-dots">
+          <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">Git / GitHub</div>
+        <div class="skill-dots">
+          <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div><div class="dot empty"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Soft Skills -->
+    <div>
+      <div class="s-section-label">// soft skills</div>
+      <div class="skill-item"><div class="skill-name">Leadership</div><div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div></div></div>
+      <div class="skill-item"><div class="skill-name">Research</div><div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div></div></div>
+      <div class="skill-item"><div class="skill-name">Mathematics</div><div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div></div></div>
+      <div class="skill-item"><div class="skill-name">Book Keeping</div><div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div><div class="dot empty"></div></div></div>
+    </div>
+
+    <!-- Languages -->
+    <div>
+      <div class="s-section-label">// languages</div>
+      <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">Fluent</span></div>
+      <div class="lang-item"><span class="lang-name">Swahili</span><span class="lang-level">Proficient</span></div>
+      <div class="lang-item"><span class="lang-name">French</span><span class="lang-level">Basic</span></div>
+      <div class="lang-item"><span class="lang-name">Afrikaans</span><span class="lang-level">Basic</span></div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    <div class="main-header">
+      <h1>CAMILLE<br>MOSIARA</h1>
+      <div class="tagline">Software Engineering Student · Nairobi, Kenya</div>
+    </div>
+
+    <!-- About -->
+    <div class="m-section">
+      <div class="m-section-label">About me</div>
+      <p class="about-text">A progressive student passionate about learning and growth, ready to help organisations grow positively. I possess people skills along with expertise in mathematical analysis, technical media operations, and I.T. I am proficient in spoken and written English, understand Swahili, and have a basic understanding of French and Afrikaans. I continuously strive to enhance and utilise my skills to grow my profession and realise the objectives of the institutions I work with.</p>
+    </div>
+
+    <!-- Education -->
+    <div class="m-section">
+      <div class="m-section-label">Education</div>
+      <div class="edu-item">
+        <div class="edu-school">KCA University, Nairobi, Kenya</div>
+        <div class="edu-degree">Diploma in Information Technology</div>
+        <div class="edu-date">2021 – 2022</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-school">ALX Africa</div>
+        <div class="edu-degree">Software Engineering Programme</div>
+        <div class="edu-date">Ongoing</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-school">St. Mary's International Academy, Nairobi, Kenya</div>
+        <div class="edu-degree">International General Certificate of Secondary Education (IGCSE)</div>
+        <div class="edu-date">2016 – 2019</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-school">Sagewood College, Midrand, South Africa</div>
+        <div class="edu-degree">General Certificate of Secondary Education</div>
+        <div class="edu-date">2015</div>
+      </div>
+    </div>
+
+    <!-- Extracurricular -->
+    <div class="m-section">
+      <div class="m-section-label">Extracurricular &amp; Certificates</div>
+      <div class="extra-item">
+        <div class="extra-dot"></div>
+        <div><div class="extra-title">Media Technical Assistant</div><div class="extra-sub">Ongoing · ACK St Mark's Church Westlands</div></div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-dot"></div>
+        <div><div class="extra-title">Fundamentals of JavaScript</div><div class="extra-sub">Ongoing · Google / Grasshopper</div></div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-dot"></div>
+        <div><div class="extra-title">Data Entry Training</div><div class="extra-sub">May 2021 · AJIRA Digital</div></div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-dot"></div>
+        <div><div class="extra-title">Game Development Using Construct 2</div><div class="extra-sub">2019 · Game Devs X SUITSA, Strathmore University</div></div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-dot"></div>
+        <div><div class="extra-title">Ending Gender Inequalities: Evidence to Impact</div><div class="extra-sub">2018 · RTI International</div></div>
+      </div>
+    </div>
+
+    <!-- Skills tags -->
+    <div class="m-section">
+      <div class="m-section-label">Tools &amp; Technologies</div>
+      <div class="skill-tags">
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">Julia</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">VS Code</span>
+        <span class="skill-tag">Networking</span>
+        <span class="skill-tag">Structured Cabling</span>
+        <span class="skill-tag">DSA</span>
+        <span class="skill-tag">Canva</span>
+      </div>
+    </div>
+
+  </div><!-- /main -->
+</div><!-- /resume-page -->
+
+</body>
+</html>
