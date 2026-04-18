@@ -186,16 +186,15 @@
     }
     .about-img-wrap::after {
       content: '';
-      position: absolute; top: 18px; left: 18px; right: -18px; bottom: -18px;
+      position: absolute; top: 14px; left: 14px; right: -14px; bottom: -14px;
       border: 2px solid var(--ice); border-radius: 8px; z-index: 0;
     }
     .about-photo {
-      width: 100%; aspect-ratio: 4/5; border-radius: 8px;
+      width: 100%; aspect-ratio: 3/4; border-radius: 8px;
       object-fit: cover; display: block; position: relative; z-index: 1;
-      background: linear-gradient(135deg, var(--ice) 0%, var(--blush) 100%);
     }
     .about-photo-placeholder {
-      width: 100%; aspect-ratio: 4/5; border-radius: 8px;
+      width: 100%; aspect-ratio: 3/4; border-radius: 8px;
       background: linear-gradient(135deg, var(--ice) 0%, var(--blush) 100%);
       display: flex; align-items: center; justify-content: center;
       font-family: var(--font-mono); font-size: 0.85rem; color: var(--mid);
@@ -221,14 +220,14 @@
       gap: 0;
       margin-top: 3rem;
       min-height: 340px;
-      border: 1px solid rgba(4,135,217,0.15);
+      border: none;
       border-radius: 12px;
       overflow: hidden;
     }
 
     /* Sidebar */
     .skills-sidebar {
-      border-right: 1px solid rgba(4,135,217,0.15);
+      border-right: 1px solid rgba(4,135,217,0.12);
       display: flex;
       flex-direction: column;
       background: white;
@@ -313,22 +312,21 @@
     /* PROJECTS — fan of cards */
     #projects {
       background: var(--cream);
-      padding: 7rem 4rem 10rem;
+      padding: 5rem 4rem 6rem;
       overflow: hidden;
       text-align: center;
     }
     #projects .section-label { color: var(--blue); justify-content: center; }
     #projects h2 {
-      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-size: clamp(2rem, 4vw, 3.5rem);
       font-weight: 700; color: var(--dark);
       letter-spacing: -0.03em; line-height: 1;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
-    #projects h2 em { font-style: italic; color: var(--blue); }
 
     .fan-stage {
       position: relative;
-      height: 480px;
+      height: 320px;
       display: flex;
       align-items: flex-end;
       justify-content: center;
@@ -336,31 +334,29 @@
 
     .fan-card {
       position: absolute;
-      width: 220px;
-      height: 340px;
-      border-radius: 20px;
+      width: 170px;
+      height: 250px;
+      border-radius: 16px;
       overflow: hidden;
       cursor: pointer;
       transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
       transform-origin: bottom center;
-      box-shadow: 0 8px 32px rgba(4,135,217,0.12);
+      box-shadow: 0 6px 24px rgba(4,135,217,0.1);
     }
     .fan-card:hover {
-      box-shadow: 0 20px 60px rgba(4,135,217,0.25);
+      box-shadow: 0 16px 48px rgba(4,135,217,0.22);
       z-index: 10 !important;
     }
 
-    /* Default fan rotations & positions — 4 cards */
-    .fan-card:nth-child(1) { transform: rotate(-22deg) translateX(-210px); z-index: 1; }
-    .fan-card:nth-child(2) { transform: rotate(-8deg) translateX(-70px);  z-index: 2; }
-    .fan-card:nth-child(3) { transform: rotate(8deg)  translateX(70px);   z-index: 3; }
-    .fan-card:nth-child(4) { transform: rotate(22deg) translateX(210px);  z-index: 2; }
+    .fan-card:nth-child(1) { transform: rotate(-22deg) translateX(-165px); z-index: 1; }
+    .fan-card:nth-child(2) { transform: rotate(-8deg)  translateX(-55px);  z-index: 2; }
+    .fan-card:nth-child(3) { transform: rotate(8deg)   translateX(55px);   z-index: 3; }
+    .fan-card:nth-child(4) { transform: rotate(22deg)  translateX(165px);  z-index: 2; }
 
-    /* Hover — straighten & lift */
-    .fan-card:nth-child(1):hover { transform: rotate(-22deg) translateX(-210px) translateY(-40px) scale(1.06); }
-    .fan-card:nth-child(2):hover { transform: rotate(-8deg)  translateX(-70px)  translateY(-40px) scale(1.06); }
-    .fan-card:nth-child(3):hover { transform: rotate(8deg)   translateX(70px)   translateY(-40px) scale(1.06); }
-    .fan-card:nth-child(4):hover { transform: rotate(22deg)  translateX(210px)  translateY(-40px) scale(1.06); }
+    .fan-card:nth-child(1):hover { transform: rotate(-22deg) translateX(-165px) translateY(-30px) scale(1.06); }
+    .fan-card:nth-child(2):hover { transform: rotate(-8deg)  translateX(-55px)  translateY(-30px) scale(1.06); }
+    .fan-card:nth-child(3):hover { transform: rotate(8deg)   translateX(55px)   translateY(-30px) scale(1.06); }
+    .fan-card:nth-child(4):hover { transform: rotate(22deg)  translateX(165px)  translateY(-30px) scale(1.06); }
 
     .fan-card-bg {
       position: absolute; inset: 0;
@@ -428,39 +424,29 @@
     .c-main { font-weight: 500; }
     .c-sub { font-size: 0.75rem; color: var(--mid); }
     .contact-card {
-      background: var(--blush); border-radius: 16px; padding: 3rem;
-      text-align: center; color: var(--dark);
+      border-radius: 16px; overflow: hidden;
+      position: relative;
     }
     .contact-card-photo {
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 1.5rem;
-      display: block;
-      border: 3px solid white;
-      box-shadow: 0 4px 16px rgba(4,135,217,0.12);
+      width: 100%; aspect-ratio: 3/4;
+      object-fit: cover; display: block; border-radius: 16px;
     }
     .contact-card-photo-fallback {
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      background: var(--ice);
-      color: var(--blue);
-      font-size: 1.4rem; font-weight: 700;
-      display: none;
-      align-items: center; justify-content: center;
-      margin: 0 auto 1.5rem;
-      border: 3px solid white;
+      width: 100%; aspect-ratio: 3/4; border-radius: 16px;
+      background: linear-gradient(135deg, var(--ice) 0%, var(--blush) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono); font-size: 0.85rem; color: var(--mid);
+      flex-direction: column; gap: 0.5rem;
     }
-    .contact-card h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--dark); }
-    .contact-card p { color: var(--mid); font-size: 0.88rem; line-height: 1.7; }
 
     /* FOOTER */
     footer {
-      background: var(--dark); padding: 2.5rem 4rem;
+      background: var(--cream); padding: 2rem 4rem;
       display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid rgba(4,135,217,0.1);
     }
-    .footer-logo { font-family: var(--font-mono); font-size: 0.9rem; color: var(--sky); }
-    .footer-copy { font-size: 0.75rem; color: rgba(196,233,242,0.3); }
+    .footer-logo { font-family: var(--font-mono); font-size: 0.9rem; color: var(--blue); }
+    .footer-copy { font-size: 0.75rem; color: var(--mid); opacity: 0.6; }
 
     /* REVEAL */
     .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.85s ease, transform 0.85s ease; }
@@ -724,12 +710,9 @@
     </div>
   </div>
   <div class="contact-card reveal rd2">
-    <!-- Replace src with your photo path e.g. src="images/picofme.png" -->
     <img src="images/picofme.png" alt="Camille Mosiara" class="contact-card-photo"
       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-    <div class="contact-card-photo-fallback">CM</div>
-    <h3>Camille Mosiara</h3>
-    <p>Software engineering student at ALX. Coding as Fantasma. Passionate about tech, empathy, and sunsets.</p>
+    <div class="contact-card-photo-fallback">📷 add your photo here</div>
   </div>
 </section>
 
