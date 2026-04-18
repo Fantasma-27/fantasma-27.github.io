@@ -73,7 +73,10 @@
     #hero {
       min-height: 100vh; padding: 8rem 4rem 5rem;
       position: relative; overflow: hidden;
-      display: flex; align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
     }
     .hero-bg-shapes {
       position: absolute; inset: 0; pointer-events: none; overflow: hidden;
@@ -83,7 +86,50 @@
     .shape-2 { width: 300px; height: 300px; background: var(--peach); bottom: 50px; left: 5%; opacity: 0.25; }
     .shape-3 { width: 150px; height: 150px; background: var(--blue); top: 40%; right: 20%; opacity: 0.12; }
 
-    .hero-content { position: relative; z-index: 2; max-width: 860px; }
+    .hero-content { position: relative; z-index: 2; }
+
+    /* RIGHT SIDE — character illustration */
+    .hero-character {
+      position: relative; z-index: 2;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; animation: fadeIn 1s ease forwards 1.4s;
+    }
+    .hero-character svg { width: 100%; max-width: 480px; height: auto; filter: drop-shadow(0 20px 40px rgba(4,135,217,0.15)); }
+
+    /* Typing animation on the mini screen inside SVG */
+    #screen-text { font-family: 'Space Mono', monospace; font-size: 7px; fill: #A8E6A3; }
+    #screen-line-1, #screen-line-2, #screen-line-3, #screen-line-4, #screen-line-5 { opacity: 0; }
+
+    /* Astronaut animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-14px); }
+    }
+    @keyframes visorGlow {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0.85; }
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1) translateY(0); }
+      20% { transform: scale(1.2) translateY(-2px); }
+      40% { transform: scale(1) translateY(0); }
+      60% { transform: scale(1.1) translateY(-1px); }
+    }
+    @keyframes screenFlicker {
+      0%, 100% { opacity: 0.9; }
+      50% { opacity: 1; }
+    }
+    .astro-body { animation: float 3.8s ease-in-out infinite; transform-origin: 240px 300px; }
+    .visor-shine { animation: visorGlow 3s ease-in-out infinite; }
+    .star-1 { animation: twinkle 2.1s ease-in-out infinite; transform-origin: center; }
+    .star-2 { animation: twinkle 3.3s ease-in-out infinite 0.5s; transform-origin: center; }
+    .star-3 { animation: twinkle 2.7s ease-in-out infinite 1.2s; transform-origin: center; }
+    .heart { animation: heartBeat 1.8s ease-in-out infinite; transform-origin: center; }
+    .laptop-screen { animation: screenFlicker 2.5s ease-in-out infinite; }
 
     .hero-tag {
       font-family: var(--font-mono);
@@ -362,6 +408,11 @@
     .rd3 { transition-delay: 0.38s; }
 
     /* MOBILE */
+    @media (max-width: 900px) {
+      #hero { grid-template-columns: 1fr; }
+      .hero-character { order: -1; }
+      .hero-character svg { max-width: 320px; }
+    }
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
@@ -398,6 +449,8 @@
     <div class="shape shape-2"></div>
     <div class="shape shape-3"></div>
   </div>
+
+  <!-- LEFT: code block + text -->
   <div class="hero-content">
     <div class="hero-tag">// camille_mosiara.dev</div>
 
@@ -425,6 +478,164 @@
       <a href="resume.html" class="btn-outline" target="_blank">View Resume ↗</a>
     </div>
   </div>
+
+  <!-- RIGHT: cute sitting astronaut with laptop -->
+  <div class="hero-character">
+    <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-label="Cute illustrated astronaut sitting cross-legged with a laptop">
+      <defs>
+        <radialGradient id="suitGrad" cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stop-color="#FFFFFF"/>
+          <stop offset="100%" stop-color="#D8E8F5"/>
+        </radialGradient>
+        <radialGradient id="helmetGrad" cx="35%" cy="28%" r="65%">
+          <stop offset="0%" stop-color="#FFFFFF"/>
+          <stop offset="100%" stop-color="#C8DCF0"/>
+        </radialGradient>
+        <radialGradient id="visorGrad" cx="32%" cy="28%" r="68%">
+          <stop offset="0%" stop-color="#A8D4F0" stop-opacity="0.95"/>
+          <stop offset="70%" stop-color="#0487D9" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#023D6B" stop-opacity="0.9"/>
+        </radialGradient>
+        <radialGradient id="laptopGrad" cx="40%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="#C4D8E8"/>
+          <stop offset="100%" stop-color="#8AAEC8"/>
+        </radialGradient>
+        <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0487D9" flood-opacity="0.12"/>
+        </filter>
+      </defs>
+
+      <!-- Floating stars scattered around -->
+      <g class="star-1">
+        <text x="42" y="68" font-size="16" fill="#F2A86D" text-anchor="middle">✦</text>
+      </g>
+      <g class="star-2">
+        <text x="370" y="100" font-size="12" fill="#049DD9" text-anchor="middle">✦</text>
+      </g>
+      <g class="star-3">
+        <text x="55" y="310" font-size="10" fill="#C4E9F2" text-anchor="middle">✦</text>
+      </g>
+      <g class="star-1" style="animation-delay:1s">
+        <text x="385" y="270" font-size="9" fill="#F2A86D" text-anchor="middle">✦</text>
+      </g>
+      <g class="star-2" style="animation-delay:0.8s">
+        <text x="340" y="52" font-size="8" fill="#049DD9" text-anchor="middle">★</text>
+      </g>
+      <g class="star-3" style="animation-delay:0.3s">
+        <text x="88" y="155" font-size="7" fill="#C4E9F2" text-anchor="middle">✦</text>
+      </g>
+
+      <!-- Heart bubble -->
+      <g class="heart" style="transform-origin: 318px 108px">
+        <circle cx="318" cy="116" r="22" fill="white" opacity="0.92" filter="url(#softShadow)"/>
+        <text x="318" y="122" font-size="18" text-anchor="middle">🤍</text>
+      </g>
+
+      <!-- ===== ASTRONAUT GROUP (floats up/down) ===== -->
+      <g class="astro-body" filter="url(#softShadow)">
+
+        <!-- CROSSED LEGS - left leg -->
+        <ellipse cx="175" cy="348" rx="58" ry="30" fill="url(#suitGrad)" stroke="#C8DCF0" stroke-width="2"/>
+        <!-- left boot -->
+        <ellipse cx="135" cy="368" rx="32" ry="20" fill="#C4D8E8" stroke="#A8C4DC" stroke-width="1.5"/>
+        <ellipse cx="135" cy="363" rx="28" ry="14" fill="#D8E8F5"/>
+
+        <!-- CROSSED LEGS - right leg -->
+        <ellipse cx="265" cy="348" rx="58" ry="30" fill="url(#suitGrad)" stroke="#C8DCF0" stroke-width="2"/>
+        <!-- right boot -->
+        <ellipse cx="302" cy="368" rx="32" ry="20" fill="#C4D8E8" stroke="#A8C4DC" stroke-width="1.5"/>
+        <ellipse cx="302" cy="363" rx="28" ry="14" fill="#D8E8F5"/>
+
+        <!-- Leg crossing overlap -->
+        <ellipse cx="215" cy="345" rx="30" ry="18" fill="url(#suitGrad)" stroke="#C8DCF0" stroke-width="1.5"/>
+        <ellipse cx="245" cy="345" rx="30" ry="18" fill="url(#suitGrad)" stroke="#C8DCF0" stroke-width="1.5"/>
+
+        <!-- TORSO / body -->
+        <ellipse cx="213" cy="285" rx="62" ry="72" fill="url(#suitGrad)" stroke="#C8DCF0" stroke-width="2"/>
+
+        <!-- Suit chest panel -->
+        <rect x="183" y="262" width="58" height="44" rx="10" fill="#C4E9F2" opacity="0.5" stroke="#A8D4EC" stroke-width="1"/>
+        <!-- Chest control dots -->
+        <circle cx="198" cy="276" r="4" fill="#0487D9"/>
+        <circle cx="212" cy="276" r="4" fill="#F2A86D"/>
+        <circle cx="226" cy="276" r="4" fill="#A8E6A3"/>
+        <!-- Chest bar -->
+        <rect x="192" y="285" width="40" height="7" rx="3" fill="#0D2040" opacity="0.25"/>
+
+        <!-- LEFT ARM (holding laptop from side) -->
+        <path d="M158 270 Q138 295 142 328" stroke="url(#suitGrad)" stroke-width="28" fill="none" stroke-linecap="round"/>
+        <path d="M158 270 Q138 295 142 328" stroke="#C8DCF0" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- left glove -->
+        <circle cx="142" cy="333" r="18" fill="#C4D8E8" stroke="#A8C4DC" stroke-width="1.5"/>
+        <ellipse cx="136" cy="328" rx="8" ry="5" fill="#D8E8F5"/>
+
+        <!-- RIGHT ARM (holding other side of laptop) -->
+        <path d="M268 270 Q290 295 286 328" stroke="url(#suitGrad)" stroke-width="28" fill="none" stroke-linecap="round"/>
+        <path d="M268 270 Q290 295 286 328" stroke="#C8DCF0" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- right glove -->
+        <circle cx="286" cy="333" r="18" fill="#C4D8E8" stroke="#A8C4DC" stroke-width="1.5"/>
+        <ellipse cx="292" cy="328" rx="8" ry="5" fill="#D8E8F5"/>
+
+        <!-- LAPTOP (resting on lap, closed-ish angle, screen facing away) -->
+        <!-- laptop base/keyboard -->
+        <rect x="148" y="318" width="130" height="24" rx="6" fill="url(#laptopGrad)" stroke="#8AAEC8" stroke-width="1.5"/>
+        <!-- keyboard detail -->
+        <rect x="154" y="322" width="118" height="14" rx="4" fill="#A0C0D8" opacity="0.5"/>
+        <rect x="157" y="324" width="40" height="4" rx="1" fill="#8AAEC8" opacity="0.5"/>
+        <rect x="201" y="324" width="30" height="4" rx="1" fill="#8AAEC8" opacity="0.5"/>
+        <rect x="157" y="330" width="114" height="4" rx="1" fill="#8AAEC8" opacity="0.5"/>
+        <!-- trackpad -->
+        <rect x="196" y="326" width="34" height="10" rx="3" fill="#90B4CC" opacity="0.6"/>
+
+        <!-- laptop lid (angled, facing viewer slightly) -->
+        <path d="M150 318 L152 268 L274 268 L276 318 Z" fill="url(#laptopGrad)" stroke="#8AAEC8" stroke-width="1.5"/>
+        <!-- screen bezel -->
+        <path d="M156 315 L158 274 L268 274 L270 315 Z" fill="#0D2040" opacity="0.85" rx="4"/>
+        <!-- screen glow (not showing contents per request) -->
+        <path class="laptop-screen" d="M160 313 L162 278 L264 278 L266 313 Z" fill="#049DD9" opacity="0.18"/>
+        <!-- tiny rocket sticker on lid -->
+        <text x="213" y="300" font-size="14" text-anchor="middle" opacity="0.7">🚀</text>
+
+        <!-- HELMET -->
+        <circle cx="213" cy="202" r="72" fill="url(#helmetGrad)" stroke="#C8DCF0" stroke-width="2.5"/>
+
+        <!-- Helmet shadow/shading right side -->
+        <ellipse cx="250" cy="215" rx="24" ry="36" fill="#0A1628" opacity="0.05"/>
+
+        <!-- Neck collar ring -->
+        <ellipse cx="213" cy="268" rx="52" ry="16" fill="#C4D8E8" stroke="#A8C4DC" stroke-width="2"/>
+        <ellipse cx="213" cy="265" rx="48" ry="12" fill="#D8E8F5"/>
+
+        <!-- VISOR -->
+        <ellipse cx="213" cy="200" rx="46" ry="42" fill="url(#visorGrad)"/>
+        <!-- Visor rim -->
+        <ellipse cx="213" cy="200" rx="46" ry="42" fill="none" stroke="#A8C8E8" stroke-width="2.5"/>
+        <!-- Visor shine highlight -->
+        <ellipse class="visor-shine" cx="196" cy="184" rx="14" ry="10" fill="white" opacity="0.3" transform="rotate(-15 196 184)"/>
+        <ellipse cx="228" cy="176" rx="6" ry="4" fill="white" opacity="0.15" transform="rotate(-10 228 176)"/>
+
+        <!-- Helmet side detail / ear pieces -->
+        <ellipse cx="143" cy="202" rx="14" ry="18" fill="#C4D8E8" stroke="#A8C4DC" stroke-width="1.5"/>
+        <ellipse cx="143" cy="202" rx="9" ry="12" fill="#D8E8F5"/>
+        <ellipse cx="283" cy="202" rx="14" ry="18" fill="#C4D8E8" stroke="#A8C4DC" stroke-width="1.5"/>
+        <ellipse cx="283" cy="202" rx="9" ry="12" fill="#D8E8F5"/>
+
+        <!-- Helmet top highlight -->
+        <ellipse cx="200" cy="150" rx="28" ry="16" fill="white" opacity="0.18" transform="rotate(-10 200 150)"/>
+
+        <!-- Suit arm stripe accents -->
+        <path d="M160 278 Q150 295 152 318" stroke="#049DD9" stroke-width="3" fill="none" opacity="0.5" stroke-linecap="round"/>
+        <path d="M266 278 Q276 295 274 318" stroke="#049DD9" stroke-width="3" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+      </g>
+      <!-- end astronaut -->
+
+      <!-- Ground shadow -->
+      <ellipse cx="213" cy="400" rx="110" ry="12" fill="#0487D9" opacity="0.08"/>
+
+    </svg>
+  </div>
+
   <div class="hero-scroll">
     <div class="scroll-line"></div>
     <span>Scroll</span>
