@@ -404,6 +404,8 @@
       background: white;
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 6rem; align-items: center;
+      overflow: hidden;
+      padding-bottom: 8rem;
     }
     #contact h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.2rem; letter-spacing: -0.02em; }
     #contact h2 em { color: var(--blue); font-style: normal; }
@@ -424,19 +426,27 @@
     .c-main { font-weight: 500; }
     .c-sub { font-size: 0.75rem; color: var(--mid); }
     .contact-card {
-      border-radius: 16px; overflow: hidden;
+      border-radius: 8px; overflow: visible;
       position: relative;
+    }
+    .contact-card::after {
+      content: '';
+      position: absolute; top: 14px; left: 14px; right: -14px; bottom: -14px;
+      border: 2px solid var(--ice); border-radius: 8px; z-index: 0;
     }
     .contact-card-photo {
       width: 100%; aspect-ratio: 3/4;
-      object-fit: cover; display: block; border-radius: 16px;
+      object-fit: cover; display: block;
+      border-radius: 8px;
+      position: relative; z-index: 1;
     }
     .contact-card-photo-fallback {
-      width: 100%; aspect-ratio: 3/4; border-radius: 16px;
+      width: 100%; aspect-ratio: 3/4; border-radius: 8px;
       background: linear-gradient(135deg, var(--ice) 0%, var(--blush) 100%);
       display: flex; align-items: center; justify-content: center;
       font-family: var(--font-mono); font-size: 0.85rem; color: var(--mid);
       flex-direction: column; gap: 0.5rem;
+      position: relative; z-index: 1;
     }
 
     /* FOOTER */
