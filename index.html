@@ -91,14 +91,11 @@
     /* RIGHT SIDE — character illustration */
     .hero-character {
       position: relative; z-index: 2;
-      display: flex; align-items: center; justify-content: center;
+      display: flex; align-items: flex-start; justify-content: center;
+      padding-top: 2rem;
       opacity: 0; animation: fadeIn 1s ease forwards 1.4s;
     }
-    .hero-character svg { width: 100%; max-width: 480px; height: auto; filter: drop-shadow(0 20px 40px rgba(4,135,217,0.15)); }
-
-    /* Typing animation on the mini screen inside SVG */
-    #screen-text { font-family: 'Space Mono', monospace; font-size: 7px; fill: #A8E6A3; }
-    #screen-line-1, #screen-line-2, #screen-line-3, #screen-line-4, #screen-line-5 { opacity: 0; }
+    .hero-character svg { width: 100%; max-width: 420px; height: auto; filter: drop-shadow(0 20px 40px rgba(4,135,217,0.12)); }
 
     /* Astronaut animations */
     @keyframes float {
@@ -463,15 +460,15 @@
       <code class="code-line"><span class="c-comment">// hello_world.js</span></code>
       <code class="code-line"><span class="c-keyword">const</span> <span class="c-var">dev</span> <span class="c-bracket">= {</span></code>
       <code class="code-line">&nbsp;&nbsp;<span class="c-func">name</span><span class="c-bracket">:</span> <span class="c-string">"</span><span class="c-name">Camille Mosiara</span><span class="c-string">"</span><span class="c-bracket">,</span></code>
-      <code class="code-line">&nbsp;&nbsp;<span class="c-func">alias</span><span class="c-bracket">:</span> <span class="c-string">"Fantasma"</span><span class="c-bracket">,</span></code>
+      <code class="code-line">&nbsp;&nbsp;<span class="c-func">alias</span><span class="c-bracket">:</span> <span class="c-string">"Fantasma-27"</span><span class="c-bracket">,</span></code>
       <code class="code-line">&nbsp;&nbsp;<span class="c-func">builds</span><span class="c-bracket">:</span> <span class="c-string">"things in code"</span><span class="c-bracket">,</span></code>
-      <code class="code-line">&nbsp;&nbsp;<span class="c-func">currently</span><span class="c-bracket">:</span> <span class="c-string">"ALX Software Engineering"</span></code>
+      <code class="code-line">&nbsp;&nbsp;<span class="c-func">currently</span><span class="c-bracket">:</span> <span class="c-string">"learning by breaking &amp; rebuilding"</span></code>
       <code class="code-line"><span class="c-bracket">};</span></code>
       <code class="code-line">&nbsp;</code>
+      <code class="code-line"><span class="c-comment">// A software engineer passionate about empathy-driven</span></code>
+      <code class="code-line"><span class="c-comment">// tech, thoughtful digital experiences &amp; a good playlist.</span></code>
       <code class="code-line"><span class="c-func">console</span><span class="c-bracket">.</span><span class="c-func">log</span><span class="c-bracket">(</span><span class="c-string">"Hi, I'm Camille. I build things."</span><span class="c-bracket">);</span><span class="blink"></span></code>
     </div>
-
-    <p class="hero-sub">A curious software engineer who breaks things to figure out how they work. Passionate about empathy-driven tech and a perfect cup of coffee.</p>
 
     <div class="hero-ctas">
       <a href="#about" class="btn-primary">Discover more →</a>
@@ -636,10 +633,6 @@
     </svg>
   </div>
 
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
-  </div>
 </section>
 
 <!-- ABOUT -->
