@@ -184,8 +184,16 @@
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 6rem; align-items: center;
     }
+    @media (max-width: 900px) {
+      #about {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
     .about-img-wrap {
       position: relative;
+      max-width: 500px;
+      margin: 0 auto;
     }
     .about-img-wrap::after {
       content: '';
@@ -532,8 +540,8 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="about-img-wrap reveal">
-    <div class="about-photo-placeholder">
-      <!-- Replace with: <img class="about-photo" src="images/picofme.png" alt="Camille"> -->
+    <img class="about-photo" src="images/picofme.png" alt="Photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+    <div class="about-photo-placeholder" style="display:none;">
       📷 add your photo here
     </div>
   </div>
