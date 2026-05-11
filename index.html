@@ -418,6 +418,12 @@
       overflow: hidden;
       padding-bottom: 8rem;
     }
+    @media (max-width: 900px) {
+      #contact {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
     #contact h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.2rem; letter-spacing: -0.02em; }
     #contact h2 em { color: var(--blue); font-style: normal; }
     #contact > div > p { color: var(--mid); line-height: 1.8; max-width: 380px; margin-bottom: 2rem; }
@@ -439,6 +445,8 @@
     .contact-card {
       border-radius: 8px; overflow: visible;
       position: relative;
+      max-width: 500px;
+      margin: 0 auto;
     }
     .contact-card::after {
       content: '';
@@ -731,9 +739,9 @@
     </div>
   </div>
   <div class="contact-card reveal rd2">
-    <img src="images/picofme.png" alt="Camille Mosiara" class="contact-card-photo"
+    <img src="images/picofme.png" alt="Photo" class="contact-card-photo"
       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-    <div class="contact-card-photo-fallback">📷 add your photo here</div>
+    <div class="contact-card-photo-fallback" style="display:none;">📷 add your photo here</div>
   </div>
 </section>
 
