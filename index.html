@@ -359,15 +359,21 @@
       z-index: 10 !important;
     }
 
-    .fan-card:nth-child(1) { transform: rotate(-22deg) translateX(-165px); z-index: 1; }
-    .fan-card:nth-child(2) { transform: rotate(-8deg)  translateX(-55px);  z-index: 2; }
-    .fan-card:nth-child(3) { transform: rotate(8deg)   translateX(55px);   z-index: 3; }
-    .fan-card:nth-child(4) { transform: rotate(22deg)  translateX(165px);  z-index: 2; }
+    .fan-card:nth-child(1) { transform: rotate(-30deg) translateX(-270px); z-index: 1; }
+    .fan-card:nth-child(2) { transform: rotate(-20deg) translateX(-180px); z-index: 2; }
+    .fan-card:nth-child(3) { transform: rotate(-10deg) translateX(-90px);  z-index: 3; }
+    .fan-card:nth-child(4) { transform: rotate(0deg)   translateX(0px);    z-index: 4; }
+    .fan-card:nth-child(5) { transform: rotate(10deg)  translateX(90px);   z-index: 3; }
+    .fan-card:nth-child(6) { transform: rotate(20deg)  translateX(180px);  z-index: 2; }
+    .fan-card:nth-child(7) { transform: rotate(30deg)  translateX(270px);  z-index: 1; }
 
-    .fan-card:nth-child(1):hover { transform: rotate(-22deg) translateX(-165px) translateY(-30px) scale(1.06); }
-    .fan-card:nth-child(2):hover { transform: rotate(-8deg)  translateX(-55px)  translateY(-30px) scale(1.06); }
-    .fan-card:nth-child(3):hover { transform: rotate(8deg)   translateX(55px)   translateY(-30px) scale(1.06); }
-    .fan-card:nth-child(4):hover { transform: rotate(22deg)  translateX(165px)  translateY(-30px) scale(1.06); }
+    .fan-card:nth-child(1):hover { transform: rotate(-30deg) translateX(-270px) translateY(-30px) scale(1.06); }
+    .fan-card:nth-child(2):hover { transform: rotate(-20deg) translateX(-180px) translateY(-30px) scale(1.06); }
+    .fan-card:nth-child(3):hover { transform: rotate(-10deg) translateX(-90px)  translateY(-30px) scale(1.06); }
+    .fan-card:nth-child(4):hover { transform: rotate(0deg)   translateX(0px)    translateY(-30px) scale(1.06); }
+    .fan-card:nth-child(5):hover { transform: rotate(10deg)  translateX(90px)   translateY(-30px) scale(1.06); }
+    .fan-card:nth-child(6):hover { transform: rotate(20deg)  translateX(180px)  translateY(-30px) scale(1.06); }
+    .fan-card:nth-child(7):hover { transform: rotate(30deg)  translateX(270px)  translateY(-30px) scale(1.06); }
 
     .fan-card-bg {
       position: absolute; inset: 0;
@@ -376,6 +382,9 @@
     .fan-card:nth-child(2) .fan-card-bg { background: linear-gradient(160deg, var(--blush), var(--peach)); }
     .fan-card:nth-child(3) .fan-card-bg { background: linear-gradient(160deg, var(--ice), var(--sky)); }
     .fan-card:nth-child(4) .fan-card-bg { background: linear-gradient(160deg, var(--blush), var(--blue)); }
+    .fan-card:nth-child(5) .fan-card-bg { background: linear-gradient(160deg, var(--ice), var(--peach)); }
+    .fan-card:nth-child(6) .fan-card-bg { background: linear-gradient(160deg, var(--blush), var(--sky)); }
+    .fan-card:nth-child(7) .fan-card-bg { background: linear-gradient(160deg, var(--ice), var(--blue)); }
 
     .fan-card-emoji {
       position: absolute;
@@ -708,9 +717,39 @@
       <div class="fan-card-bg"></div>
       <div class="fan-card-emoji">✨</div>
       <div class="fan-card-body">
-        <div class="fan-card-num">04 — Next Chapter</div>
-        <div class="fan-card-title">TBD...</div>
-        <a href="#contact" class="fan-card-link">Get in touch →</a>
+        <div class="fan-card-num">04 — Project</div>
+        <div class="fan-card-title">Project Four</div>
+        <a href="#" class="fan-card-link">Coming soon →</a>
+      </div>
+    </div>
+
+    <div class="fan-card">
+      <div class="fan-card-bg"></div>
+      <div class="fan-card-emoji">🚀</div>
+      <div class="fan-card-body">
+        <div class="fan-card-num">05 — Project</div>
+        <div class="fan-card-title">Project Five</div>
+        <a href="#" class="fan-card-link">Coming soon →</a>
+      </div>
+    </div>
+
+    <div class="fan-card">
+      <div class="fan-card-bg"></div>
+      <div class="fan-card-emoji">⚡</div>
+      <div class="fan-card-body">
+        <div class="fan-card-num">06 — Project</div>
+        <div class="fan-card-title">Project Six</div>
+        <a href="#" class="fan-card-link">Coming soon →</a>
+      </div>
+    </div>
+
+    <div class="fan-card">
+      <div class="fan-card-bg"></div>
+      <div class="fan-card-emoji">🔗</div>
+      <div class="fan-card-body">
+        <div class="fan-card-num">07 — More</div>
+        <div class="fan-card-title">View All Projects</div>
+        <a href="https://github.com/Fantasma-27" class="fan-card-link" target="_blank">GitHub →</a>
       </div>
     </div>
 
