@@ -201,7 +201,7 @@
       border: 2px solid var(--ice); border-radius: 8px; z-index: 0;
     }
     .about-photo {
-      width: 100%; aspect-ratio: 3/4; border-radius: 8px;
+      width: 90%; aspect-ratio: 3/4; border-radius: 8px;
       object-fit: cover; display: block; position: relative; z-index: 1;
     }
     .about-photo-placeholder {
@@ -332,7 +332,7 @@
       font-size: clamp(2rem, 4vw, 3.5rem);
       font-weight: 700; color: var(--dark);
       letter-spacing: -0.03em; line-height: 1;
-      margin-bottom: 5rem;
+      margin-bottom: 1.5rem;
     }
 
     .fan-stage {
@@ -471,7 +471,7 @@
       border: 2px solid var(--ice); border-radius: 8px; z-index: 0;
     }
     .contact-card-photo {
-      width: 100%; aspect-ratio: 3/4;
+      width: 90%; aspect-ratio: 3/4;
       object-fit: cover; display: block;
       border-radius: 8px;
       position: relative; z-index: 1;
@@ -575,12 +575,12 @@
   <div class="about-text">
     <div class="section-label reveal">About me</div>
     <h2 class="reveal rd1">Empathy-driven<br><em>engineer.</em></h2>
-    <p class="reveal rd2">In my free time I like to mess things up so I can discover how to fix them — don't tell my mom I accidentally uninstalled her OS that one time... shhh.</p>
-    <p class="reveal rd2">I'm a passionate advocate for creating meaningful connections between technology and human experiences. My journey began back in grade 8, but it's empathy that truly sets me apart. I hold a Diploma in IT from KCA University and am currently studying Software Engineering at ALX.</p>
-    <p class="reveal rd2">Beyond technology, I find joy in sunsets, stories, and a perfect cup of coffee.</p>
+    <p class="reveal rd2">I'm a Software Engineer based in Mauritius building solutions that bridge tech gaps for African communities. My journey began in grade 8 with school projects for technology class, and it's evolved into a clear mission: creating tech that serves real people with real needs.</p>
+    <p class="reveal rd2">I learn through experimentation. Once, while troubleshooting my mom's computer, I accidentally uninstalled her OS — but I managed to fix it and restore her files. That experience taught me resilience: break it down, fix it, restore what matters. It's how I approach every challenge.</p>
+    <p class="reveal rd2">Empathy drives everything I build. That shows up in designing interfaces for users with limited bandwidth, mentoring developers in underserved communities, and focusing on technology that amplifies human potential instead of complicating it. Right now, I'm building toward a future where advanced tools are accessible across Africa. Beyond code, I find joy in sunsets, stories, and a competitive game or two.</p>
     <div class="about-stats reveal rd3">
-      <div><div class="stat-num">3+</div><div class="stat-label">Years coding</div></div>
-      <div><div class="stat-num">ALX</div><div class="stat-label">Current program</div></div>
+      <div><div class="stat-num">4+</div><div class="stat-label">Years coding</div></div>
+      <div><div class="stat-num">Full<br>Stack</div><div class="stat-label">Focus area</div></div>
       <div><div class="stat-num">∞</div><div class="stat-label">Curiosity</div></div>
     </div>
   </div>
@@ -598,7 +598,9 @@
       <div class="skill-tab" data-skill="java">Java</div>
       <div class="skill-tab" data-skill="networks">Networks</div>
       <div class="skill-tab" data-skill="dsa">DSA</div>
-      <div class="skill-tab" data-skill="tools">Tools</div>
+      <div class="skill-tab" data-skill="apis">APIs</div>
+      <div class="skill-tab" data-skill="education">Education</div>
+      <div class="skill-tab" data-skill="unwind">Unwind</div>
     </div>
 
     <!-- Detail panels -->
@@ -606,7 +608,7 @@
 
       <div class="skill-panel active" id="skill-web">
         <div class="skill-panel-title">Web <em>Development</em></div>
-        <div class="skill-panel-sub">Frontend · 2021 – Present</div>
+        <div class="skill-panel-sub">Frontend & responsive design</div>
         <ul class="skill-panel-desc">
           <li>Build responsive, accessible web pages from scratch using semantic HTML and CSS.</li>
           <li>Write interactive experiences with vanilla JavaScript — events, DOM, animations.</li>
@@ -616,12 +618,14 @@
           <span class="skill-panel-tag">HTML5</span>
           <span class="skill-panel-tag">CSS3</span>
           <span class="skill-panel-tag">JavaScript</span>
+          <span class="skill-panel-tag">Responsive Design</span>
+          <span class="skill-panel-tag">Accessibility</span>
         </div>
       </div>
 
       <div class="skill-panel" id="skill-java">
         <div class="skill-panel-title">Java <em>Programming</em></div>
-        <div class="skill-panel-sub">Backend · KCA University</div>
+        <div class="skill-panel-sub">Backend & OOP architecture</div>
         <ul class="skill-panel-desc">
           <li>Apply object-oriented principles to design structured, reusable code.</li>
           <li>Work with core Java SE features — classes, interfaces, collections, and error handling.</li>
@@ -629,14 +633,16 @@
         </ul>
         <div class="skill-panel-tags">
           <span class="skill-panel-tag">Java SE</span>
+          <span class="skill-panel-tag">NetBeans</span>
           <span class="skill-panel-tag">OOP</span>
           <span class="skill-panel-tag">Data Types</span>
+          <span class="skill-panel-tag">Collections</span>
         </div>
       </div>
 
       <div class="skill-panel" id="skill-networks">
-        <div class="skill-panel-title">Networking &amp; <em>Infrastructure</em></div>
-        <div class="skill-panel-sub">IT Support · KCA University Diploma</div>
+        <div class="skill-panel-title">Networking <em>&amp; Infrastructure</em></div>
+        <div class="skill-panel-sub">Connectivity & system architecture</div>
         <ul class="skill-panel-desc">
           <li>Install and configure structured cabling systems for local area networks.</li>
           <li>Troubleshoot connectivity issues across hardware and software layers.</li>
@@ -646,12 +652,13 @@
           <span class="skill-panel-tag">Structured Cabling</span>
           <span class="skill-panel-tag">LAN / WAN</span>
           <span class="skill-panel-tag">IT Support</span>
+          <span class="skill-panel-tag">Network Protocols</span>
         </div>
       </div>
 
       <div class="skill-panel" id="skill-dsa">
         <div class="skill-panel-title">Data Structures <em>&amp; Algorithms</em></div>
-        <div class="skill-panel-sub">Computer Science · ALX Programme</div>
+        <div class="skill-panel-sub">Problem-solving & optimization</div>
         <ul class="skill-panel-desc">
           <li>Implement and analyse fundamental data structures — arrays, linked lists, trees, and stacks.</li>
           <li>Solve problems with classic sorting and searching algorithms.</li>
@@ -666,19 +673,54 @@
         </div>
       </div>
 
-      <div class="skill-panel" id="skill-tools">
-        <div class="skill-panel-title">Dev <em>Tools</em></div>
-        <div class="skill-panel-sub">Workflow · Daily Use</div>
+      <div class="skill-panel" id="skill-apis">
+        <div class="skill-panel-title">APIs <em>&amp; Integration</em></div>
+        <div class="skill-panel-sub">Service integration & testing</div>
         <ul class="skill-panel-desc">
-          <li>Use Git and GitHub for version control, branching, and collaborative code reviews.</li>
-          <li>Work in VS Code with extensions that keep code clean and efficient.</li>
-          <li>Explore Julia for mathematical computing and scripting.</li>
+          <li>Build and test APIs with Swagger for clear documentation and Postman for seamless testing.</li>
+          <li>Integrate enterprise solutions using SnapLogic and NewGen One platforms.</li>
+          <li>Work with Microsoft Dynamics NAV for enterprise resource planning.</li>
+          <li>Deploy and manage with Azure DevOps for continuous integration and delivery.</li>
         </ul>
         <div class="skill-panel-tags">
-          <span class="skill-panel-tag">Git</span>
-          <span class="skill-panel-tag">GitHub</span>
-          <span class="skill-panel-tag">VS Code</span>
-          <span class="skill-panel-tag">Julia</span>
+          <span class="skill-panel-tag">Swagger</span>
+          <span class="skill-panel-tag">Postman</span>
+          <span class="skill-panel-tag">SnapLogic</span>
+          <span class="skill-panel-tag">NewGen One</span>
+          <span class="skill-panel-tag">Dynamics NAV</span>
+          <span class="skill-panel-tag">Azure DevOps</span>
+        </div>
+      </div>
+
+      <div class="skill-panel" id="skill-education">
+        <div class="skill-panel-title">Education <em>&amp; Learning</em></div>
+        <div class="skill-panel-sub">Continuous growth & formal training</div>
+        <ul class="skill-panel-desc">
+          <li>Diploma in Information Technology from KCA University with networking and IT infrastructure focus.</li>
+          <li>FEDE Full Stack Development certification covering frontend, backend, and database design.</li>
+          <li>Machine Learning Engineering & MLOps training for AI-driven solutions and model deployment.</li>
+          <li>Passionate about lifelong learning and staying current with emerging technologies.</li>
+        </ul>
+        <div class="skill-panel-tags">
+          <span class="skill-panel-tag">KCA University</span>
+          <span class="skill-panel-tag">FEDE Full Stack</span>
+          <span class="skill-panel-tag">ML Engineering</span>
+          <span class="skill-panel-tag">MLOps</span>
+        </div>
+      </div>
+
+      <div class="skill-panel" id="skill-unwind">
+        <div class="skill-panel-title">Unwind <em>&amp; Recharge</em></div>
+        <div class="skill-panel-sub">Keeping balance and staying inspired</div>
+        <ul class="skill-panel-desc">
+          <li>Recharge with competitive gaming on EA Sports — quick matches, strategic thinking, pure fun.</li>
+          <li>Curate the perfect soundtrack with Spotify playlists for focused coding sessions and creative breaks.</li>
+          <li>Find inspiration in sunsets, stories, and good conversations about tech and life.</li>
+          <li>Believe that the best code comes from a balanced mind.</li>
+        </ul>
+        <div class="skill-panel-tags">
+          <span class="skill-panel-tag">EA Sports</span>
+          <span class="skill-panel-tag">Spotify</span>
         </div>
       </div>
 
@@ -693,74 +735,39 @@
 
   <div class="fan-stage reveal rd2">
 
-    <div class="fan-card">
+    <div class="fan-card" onclick="window.open('#', '_blank')" style="cursor: pointer;">
       <div class="fan-card-bg"></div>
-      <div class="fan-card-emoji">🤰</div>
-      <div class="fan-card-body">
-        <div class="fan-card-num">01 — App</div>
-        <div class="fan-card-title">Mama Minds</div>
-        <a href="https://cindyleahphoto-ctrl.github.io/Mama-Minds-PPD/" class="fan-card-link" target="_blank">View App →</a>
-      </div>
+      <div class="fan-card-emoji">💻</div>
     </div>
 
-    <div class="fan-card">
+    <div class="fan-card" onclick="window.open('#', '_blank')" style="cursor: pointer;">
+      <div class="fan-card-bg"></div>
+      <div class="fan-card-emoji">🎬</div>
+    </div>
+
+    <div class="fan-card" onclick="window.open('https://fantasma-27.github.io/MonksDocTracker/', '_blank')" style="cursor: pointer;">
       <div class="fan-card-bg"></div>
       <div class="fan-card-emoji">🏉</div>
-      <div class="fan-card-body">
-        <div class="fan-card-num">02 — Platform</div>
-        <div class="fan-card-title">Monks Docs</div>
-        <a href="https://fantasma-27.github.io/MonksDocTracker/" class="fan-card-link" target="_blank">View Platform →</a>
-      </div>
     </div>
 
-    <div class="fan-card">
+    <div class="fan-card" onclick="window.open('https://fantasma-27.github.io', '_blank')" style="cursor: pointer;">
       <div class="fan-card-bg"></div>
-      <div class="fan-card-emoji">🌍</div>
-      <div class="fan-card-body">
-        <div class="fan-card-num">03 — Coming Soon</div>
-        <div class="fan-card-title">Hello, World.</div>
-        <a href="#" class="fan-card-link">Stay tuned →</a>
-      </div>
+      <div class="fan-card-emoji">👻</div>
     </div>
 
-    <div class="fan-card">
+    <div class="fan-card" onclick="window.open('https://cindyleahphoto-ctrl.github.io/Mama-Minds-PPD/', '_blank')" style="cursor: pointer;">
       <div class="fan-card-bg"></div>
-      <div class="fan-card-emoji">✨</div>
-      <div class="fan-card-body">
-        <div class="fan-card-num">04 — Project</div>
-        <div class="fan-card-title">Project Four</div>
-        <a href="#" class="fan-card-link">Coming soon →</a>
-      </div>
+      <div class="fan-card-emoji">🤰</div>
     </div>
 
-    <div class="fan-card">
-      <div class="fan-card-bg"></div>
-      <div class="fan-card-emoji">🚀</div>
-      <div class="fan-card-body">
-        <div class="fan-card-num">05 — Project</div>
-        <div class="fan-card-title">Project Five</div>
-        <a href="#" class="fan-card-link">Coming soon →</a>
-      </div>
-    </div>
-
-    <div class="fan-card">
+    <div class="fan-card" onclick="window.open('#', '_blank')" style="cursor: pointer;">
       <div class="fan-card-bg"></div>
       <div class="fan-card-emoji">⚡</div>
-      <div class="fan-card-body">
-        <div class="fan-card-num">06 — Project</div>
-        <div class="fan-card-title">Project Six</div>
-        <a href="#" class="fan-card-link">Coming soon →</a>
-      </div>
     </div>
 
-    <div class="fan-card">
+    <div class="fan-card" onclick="window.open('https://github.com/Fantasma-27', '_blank')" style="cursor: pointer;">
       <div class="fan-card-bg"></div>
       <div class="fan-card-emoji">🔗</div>
-      <div class="fan-card-body">
-        <div class="fan-card-num">07 — More</div>
-        <div class="fan-card-title">View All Projects</div>
-        <a href="https://github.com/Fantasma-27" class="fan-card-link" target="_blank">GitHub →</a>
-      </div>
     </div>
 
   </div>
@@ -797,7 +804,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">// fantasma — 2024</div>
-  <div class="footer-copy">FYI, FANTASMA Was Here :)</div>
+  <div class="footer-copy">FYI, Fantasma was here</div>
 </footer>
 
 <script>
@@ -809,13 +816,13 @@
     [{ t:'const ', c:'c-keyword' }, { t:'dev', c:'c-var' }, { t:' = {', c:'c-bracket' }],
     [{ t:'  name', c:'c-func' }, { t:':', c:'c-bracket' }, { t:' "', c:'c-string' }, { t:'Camille Mosiara', c:'c-name' }, { t:'"', c:'c-string' }, { t:',', c:'c-bracket' }],
     [{ t:'  alias', c:'c-func' }, { t:':', c:'c-bracket' }, { t:' "Fantasma-27"', c:'c-string' }, { t:',', c:'c-bracket' }],
-    [{ t:'  builds', c:'c-func' }, { t:':', c:'c-bracket' }, { t:' "things in code"', c:'c-string' }, { t:',', c:'c-bracket' }],
-    [{ t:'  currently', c:'c-func' }, { t:':', c:'c-bracket' }, { t:' "learning by breaking & rebuilding"', c:'c-string' }],
+    [{ t:'  builds', c:'c-func' }, { t:':', c:'c-bracket' }, { t:' "vivacious digital experiences"', c:'c-string' }, { t:',', c:'c-bracket' }],
+    [{ t:'  currently', c:'c-func' }, { t:':', c:'c-bracket' }, { t:' "asking if there\'s an app for that"', c:'c-string' }],
     [{ t:'};', c:'c-bracket' }],
     [],
     [{ t:'// A software engineer passionate about empathy-driven', c:'c-comment' }],
     [{ t:'// tech, thoughtful digital experiences & a good playlist.', c:'c-comment' }],
-    [{ t:'console', c:'c-func' }, { t:'.', c:'c-bracket' }, { t:'log', c:'c-func' }, { t:'(', c:'c-bracket' }, { t:'"Hi, I\'m Camille. I build things."', c:'c-string' }, { t:');', c:'c-bracket' }],
+    [{ t:'console', c:'c-func' }, { t:'.', c:'c-bracket' }, { t:'log', c:'c-func' }, { t:'(', c:'c-bracket' }, { t:'"Hey, I\'m Camille. I build tech."', c:'c-string' }, { t:');', c:'c-bracket' }],
   ];
 
   const CHAR_DELAY = 55;   // ms per character
