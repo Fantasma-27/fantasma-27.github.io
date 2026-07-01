@@ -183,6 +183,9 @@
       background: white;
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 3rem; align-items: center;
+      padding: 6rem 8rem;
+      margin: 0 auto;
+      max-width: 1400px;
     }
     @media (max-width: 900px) {
       #about {
@@ -201,7 +204,7 @@
       border: 2px solid var(--ice); border-radius: 8px; z-index: 0;
     }
     .about-photo {
-      width: 90%; aspect-ratio: 3/4; border-radius: 8px;
+      width: 72%; aspect-ratio: 3/4; border-radius: 8px;
       object-fit: cover; display: block; position: relative; z-index: 1;
     }
     .about-photo-placeholder {
@@ -217,12 +220,14 @@
     }
     .about-text h2 em { color: var(--blue); font-style: normal; }
     .about-text p { color: var(--mid); line-height: 1.85; font-size: 0.95rem; margin-bottom: 1rem; }
-    .about-stats { display: flex; gap: 2.5rem; margin-top: 2.5rem; }
-    .stat-num { font-size: 2.2rem; font-weight: 700; color: var(--blue); font-family: var(--font-mono); line-height:1; }
+    .about-stats { display: flex; gap: 2.5rem; margin-top: 2.5rem; align-items: flex-start; }
+    .stat-num { font-size: 2rem; font-weight: 700; color: var(--blue); font-family: var(--font-mono); line-height: 1.1; text-align: center; min-width: 60px; }
     .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--mid); margin-top: 0.2rem; }
+    .about-stats > div:last-child .stat-num { font-size: 2.4rem; }
 
     /* SKILLS — sidebar click layout */
-    #skills { background: var(--cream); padding: 7rem 4rem; }
+    #skills { background: var(--cream); padding: 7rem 4rem; display: flex; justify-content: center; }
+    #skills > * { width: 100%; max-width: 1000px; }
     #skills .section-label { color: var(--blue); }
 
     .skills-layout {
@@ -332,7 +337,7 @@
       font-size: clamp(2rem, 4vw, 3.5rem);
       font-weight: 700; color: var(--dark);
       letter-spacing: -0.03em; line-height: 1;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
     .fan-stage {
@@ -434,6 +439,11 @@
       gap: 3rem; align-items: center;
       overflow: hidden;
       padding-bottom: 8rem;
+      padding-left: 8rem;
+      padding-right: 8rem;
+      padding-top: 6rem;
+      margin: 0 auto;
+      max-width: 1400px;
     }
     @media (max-width: 900px) {
       #contact {
@@ -471,7 +481,7 @@
       border: 2px solid var(--ice); border-radius: 8px; z-index: 0;
     }
     .contact-card-photo {
-      width: 90%; aspect-ratio: 3/4;
+      width: 72%; aspect-ratio: 3/4;
       object-fit: cover; display: block;
       border-radius: 8px;
       position: relative; z-index: 1;
@@ -580,7 +590,7 @@
     <p class="reveal rd2">Empathy drives everything I build. That shows up in designing interfaces for users with limited bandwidth, mentoring developers in underserved communities, and focusing on technology that amplifies human potential instead of complicating it. Right now, I'm building toward a future where advanced tools are accessible across Africa. Beyond code, I find joy in sunsets, stories, and a competitive game or two.</p>
     <div class="about-stats reveal rd3">
       <div><div class="stat-num">4+</div><div class="stat-label">Years coding</div></div>
-      <div><div class="stat-num">Full<br>Stack</div><div class="stat-label">Focus area</div></div>
+      <div><div class="stat-num">Full Stack</div><div class="stat-label">Focus area</div></div>
       <div><div class="stat-num">∞</div><div class="stat-label">Curiosity</div></div>
     </div>
   </div>
