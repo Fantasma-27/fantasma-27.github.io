@@ -323,8 +323,8 @@
     /* PROJECTS — fan of cards */
     #projects {
       background: var(--cream);
-      padding: 5rem 4rem 6rem;
-      overflow: hidden;
+      padding: 6rem 8rem 10rem;
+      overflow: visible;
       text-align: center;
     }
     #projects .section-label { color: var(--blue); justify-content: center; }
@@ -332,15 +332,20 @@
       font-size: clamp(2rem, 4vw, 3.5rem);
       font-weight: 700; color: var(--dark);
       letter-spacing: -0.03em; line-height: 1;
-      margin-bottom: 3rem;
+      margin-bottom: 5rem;
     }
 
     .fan-stage {
       position: relative;
-      height: 320px;
+      height: 450px;
       display: flex;
       align-items: flex-end;
       justify-content: center;
+      margin-bottom: 2rem;
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .fan-card {
@@ -377,9 +382,12 @@
 
     .fan-card-bg {
       position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
-    .fan-card:nth-child(1) .fan-card-bg { background: linear-gradient(160deg, var(--ice), var(--blue)); }
-    .fan-card:nth-child(2) .fan-card-bg { background: linear-gradient(160deg, var(--blush), var(--peach)); }
+    .fan-card:nth-child(1) .fan-card-bg { background-image: url('images/mama-minds.png'); }
+    .fan-card:nth-child(2) .fan-card-bg { background-image: url('images/monks-docs.png'); }
     .fan-card:nth-child(3) .fan-card-bg { background: linear-gradient(160deg, var(--ice), var(--sky)); }
     .fan-card:nth-child(4) .fan-card-bg { background: linear-gradient(160deg, var(--blush), var(--blue)); }
     .fan-card:nth-child(5) .fan-card-bg { background: linear-gradient(160deg, var(--ice), var(--peach)); }
@@ -503,6 +511,8 @@
       section { padding: 5rem 1.5rem; }
       #hero { padding: 7rem 1.5rem 4rem; }
       #about, #contact { grid-template-columns: 1fr; gap: 3rem; }
+      #projects { padding: 4rem 1.5rem 6rem; }
+      .fan-stage { height: 380px; }
       .skills-grid { height: auto; flex-direction: column; }
       .skill-card { min-height: 100px; }
       footer { flex-direction: column; gap: 0.75rem; text-align: center; }
@@ -557,7 +567,7 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="about-img-wrap reveal">
-    <img class="about-photo" src="images/picofme.png" alt="Photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+    <img class="about-photo" src="images/picofme.jpeg" alt="Photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
     <div class="about-photo-placeholder" style="display:none;">
       📷 add your photo here
     </div>
@@ -685,21 +695,21 @@
 
     <div class="fan-card">
       <div class="fan-card-bg"></div>
-      <div class="fan-card-emoji">💻</div>
+      <div class="fan-card-emoji">🤰</div>
       <div class="fan-card-body">
-        <div class="fan-card-num">01 — Team Project</div>
-        <div class="fan-card-title">The Unnamed One</div>
-        <a href="https://www.canva.com/design/DAFoyH_aGzo/dnr8GL-bLSDCQ_e2mae85Q/view" class="fan-card-link" target="_blank">View Slides →</a>
+        <div class="fan-card-num">01 — App</div>
+        <div class="fan-card-title">Mama Minds</div>
+        <a href="https://cindyleahphoto-ctrl.github.io/Mama-Minds-PPD/" class="fan-card-link" target="_blank">View App →</a>
       </div>
     </div>
 
     <div class="fan-card">
       <div class="fan-card-bg"></div>
-      <div class="fan-card-emoji">🎬</div>
+      <div class="fan-card-emoji">🏉</div>
       <div class="fan-card-body">
-        <div class="fan-card-num">02 — Demo Video</div>
-        <div class="fan-card-title">Test App</div>
-        <a href="https://www.youtube.com/watch?v=etcgB9ZoS1A" class="fan-card-link" target="_blank">Watch Demo →</a>
+        <div class="fan-card-num">02 — Platform</div>
+        <div class="fan-card-title">Monks Docs</div>
+        <a href="https://fantasma-27.github.io/MonksDocTracker/" class="fan-card-link" target="_blank">View Platform →</a>
       </div>
     </div>
 
@@ -778,16 +788,16 @@
     </div>
   </div>
   <div class="contact-card reveal rd2">
-    <img src="images/picofme.png" alt="Photo" class="contact-card-photo"
+    <img src="images/codeovercoffee.jpeg" alt="Code Over Coffee" class="contact-card-photo"
       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-    <div class="contact-card-photo-fallback" style="display:none;">📷 add your photo here</div>
+    <div class="contact-card-photo-fallback" style="display:none;">☕ Let's connect</div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">// fantasma — 2024</div>
-  <div class="footer-copy">Designed &amp; built by Camille Mosiara</div>
+  <div class="footer-copy">FYI, FANTASMA Was Here :)</div>
 </footer>
 
 <script>
