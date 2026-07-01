@@ -223,12 +223,12 @@
     .about-stats { display: flex; gap: 2.5rem; margin-top: 2.5rem; align-items: flex-start; }
     .stat-num { font-size: 2rem; font-weight: 700; color: var(--blue); font-family: var(--font-mono); line-height: 1.1; text-align: center; min-width: 60px; }
     .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--mid); margin-top: 0.2rem; }
-    .about-stats > div:last-child .stat-num { font-size: 2.4rem; }
+    .about-stats > div:last-child .stat-num { font-size: 2.55rem; }
 
     /* SKILLS — sidebar click layout */
-    #skills { background: var(--cream); padding: 7rem 4rem; display: flex; justify-content: center; }
+    #skills { background: var(--cream); padding: 7rem 4rem; display: flex; flex-direction: column; align-items: center; }
     #skills > * { width: 100%; max-width: 1000px; }
-    #skills .section-label { color: var(--blue); }
+    #skills .section-label { color: var(--blue); justify-content: center; width: 100%; margin-bottom: 3rem; }
 
     .skills-layout {
       display: grid;
@@ -337,7 +337,7 @@
       font-size: clamp(2rem, 4vw, 3.5rem);
       font-weight: 700; color: var(--dark);
       letter-spacing: -0.03em; line-height: 1;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.1rem;
     }
 
     .fan-stage {
@@ -391,11 +391,12 @@
       background-position: center;
       background-repeat: no-repeat;
     }
-    .fan-card:nth-child(1) .fan-card-bg { background-image: url('images/mama-minds.png'); }
-    .fan-card:nth-child(2) .fan-card-bg { background-image: url('images/monks-docs.png'); }
-    .fan-card:nth-child(3) .fan-card-bg { background: linear-gradient(160deg, var(--ice), var(--sky)); }
+    .fan-card:nth-child(1) .fan-card-bg { background: linear-gradient(160deg, var(--ice), var(--blue)); }
+    .fan-card:nth-child(2) .fan-card-bg { background: linear-gradient(160deg, var(--blush), var(--peach)); }
+    .fan-card:nth-child(3) .fan-card-bg { background-image: url('images/monks-docs.png'); }
     .fan-card:nth-child(4) .fan-card-bg { background: linear-gradient(160deg, var(--blush), var(--blue)); }
-    .fan-card:nth-child(5) .fan-card-bg { background: linear-gradient(160deg, var(--ice), var(--peach)); }
+    .fan-card:nth-child(5) .fan-card-bg { background-image: url('images/mama-minds.png'); }
+    .fan-card:nth-child(6) .fan-card-bg { background: linear-gradient(160deg, var(--ice), var(--peach)); }
     .fan-card:nth-child(6) .fan-card-bg { background: linear-gradient(160deg, var(--blush), var(--sky)); }
     .fan-card:nth-child(7) .fan-card-bg { background: linear-gradient(160deg, var(--ice), var(--blue)); }
 
@@ -748,11 +749,19 @@
     <div class="fan-card" onclick="window.open('#', '_blank')" style="cursor: pointer;">
       <div class="fan-card-bg"></div>
       <div class="fan-card-emoji">💻</div>
+      <div class="fan-card-body">
+        <div class="fan-card-num">01</div>
+        <div class="fan-card-title">Coming Soon</div>
+      </div>
     </div>
 
     <div class="fan-card" onclick="window.open('#', '_blank')" style="cursor: pointer;">
       <div class="fan-card-bg"></div>
       <div class="fan-card-emoji">🎬</div>
+      <div class="fan-card-body">
+        <div class="fan-card-num">02</div>
+        <div class="fan-card-title">Coming Soon</div>
+      </div>
     </div>
 
     <div class="fan-card" onclick="window.open('https://fantasma-27.github.io/MonksDocTracker/', '_blank')" style="cursor: pointer;">
@@ -763,6 +772,10 @@
     <div class="fan-card" onclick="window.open('https://fantasma-27.github.io', '_blank')" style="cursor: pointer;">
       <div class="fan-card-bg"></div>
       <div class="fan-card-emoji">👻</div>
+      <div class="fan-card-body">
+        <div class="fan-card-num">04</div>
+        <div class="fan-card-title">This Website</div>
+      </div>
     </div>
 
     <div class="fan-card" onclick="window.open('https://cindyleahphoto-ctrl.github.io/Mama-Minds-PPD/', '_blank')" style="cursor: pointer;">
@@ -773,6 +786,10 @@
     <div class="fan-card" onclick="window.open('#', '_blank')" style="cursor: pointer;">
       <div class="fan-card-bg"></div>
       <div class="fan-card-emoji">⚡</div>
+      <div class="fan-card-body">
+        <div class="fan-card-num">06</div>
+        <div class="fan-card-title">Coming Soon</div>
+      </div>
     </div>
 
     <div class="fan-card" onclick="window.open('https://github.com/Fantasma-27', '_blank')" style="cursor: pointer;">
